@@ -5,5 +5,23 @@
     "helmet": "^7.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^3.0.1"
-  }
+  },
+  "name": "structuring-get-post-put-delete",
+  "description": "Structuring - get - post - put - delete - with database",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m6336mohammad/Structuring-get-post-put-delete.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m6336mohammad/Structuring-get-post-put-delete/issues"
+  },
+  "homepage": "https://github.com/m6336mohammad/Structuring-get-post-put-delete#readme"
 }
