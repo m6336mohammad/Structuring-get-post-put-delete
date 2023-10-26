@@ -4,7 +4,12 @@ const courses = [
   { id: 3, name: "javascript" },
 ];
 
-//get
+//get courses
+const getCourse = (req ,res)=>{
+  res.send(courses);
+};
+
+//get courses by ID 
 const getCourseById = (req, res) => {
   const course = courses.find((c) => c.id === parseInt(req.params.id));
   if (!course) {
@@ -14,6 +19,5 @@ const getCourseById = (req, res) => {
 };
 
 
-const getCourse = (req ,res)=>{
-  res.send(courses);
-};
+
+export default {getCourse,getCourseById}
