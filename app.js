@@ -3,6 +3,7 @@ import express  from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import homeRouter from './routes/home-route.js';
+import courseRouter from './routes/course-router.js';
 const port = process.env.PORT || 3000;
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(helmet());
 app.use(morgan('tiny'));
 
 app.use('/',homeRouter);
+app.use('/api/course',courseRouter);
 
 app.listen(port ,()=>{
   console.log(`server run on port: ${port}`);
