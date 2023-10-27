@@ -7,6 +7,6 @@ router.get("/", courseControler.getCourse);
 router.get("/:id", courseControler.getCourseById);
 router.post("/", courseControler.postCourse);
 router.put("/:id", courseControler.putCourse);
-// router.delete("/:id");
+router.delete("/:id",courseControler.deleteCourseById);
 
 export default router;
