@@ -43,12 +43,11 @@ const postCourse = (req,res)=>{
 } 
 
 
-//put
 const putCourse = (req, res) => {
   const courseId = parseInt(req.params.id);
   const courseIndex = courses.findIndex((c) => c.id === courseId);
 
-  if (courseIndex) {
+  if (courseIndex === -1) {
     return res.status(404).json({ data: null, message: "Course not found" });
   }
 
