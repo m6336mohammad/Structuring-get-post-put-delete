@@ -58,11 +58,22 @@ const putCourse = (req, res) => {
   res.status(200).json({ data: courses[courseIndex], code: 200, message: "OK" });
 };
 
+const deleteCourseById = (req,res)=>{
+ 
+  const course = courses.find((c)=> c.id === parseInt(req.params.id));
+  if(!course){return res.status(404).send('coures with given id not found')};
+  
+  const index = courses.indexOf(course);
+  courses.splice(index,1);
+  res.send({data:course , message: "deleted successful"});
 
+
+}
 
 export default {
   getCourse,
   getCourseById,
   postCourse,
   putCourse,
+  deleteCourseById,
 }
