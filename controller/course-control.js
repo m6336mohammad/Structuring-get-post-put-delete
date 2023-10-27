@@ -1,7 +1,7 @@
 const courses = [
-  { id: 1, name: "html" },
-  { id: 2, name: "css" },
-  { id: 3, name: "javascript" },
+  { id: 1, name: "html" ,page: 20},
+  { id: 2, name: "css" ,page:25},
+  { id: 3, name: "javascript",page:35 },
 ];
 
 //get courses
@@ -42,8 +42,28 @@ const postCourse = (req,res)=>{
   }
 } 
 
+
+//put
+const putCourse = (req, res) => {
+  const courseId = parseInt(req.params.id);
+  const courseIndex = courses.findIndex((c) => c.id === courseId);
+
+  if (!courseIndex) {
+    return res.status(404).json({ data: null, message: "Course not found" });
+  }
+
+  const user = req.body;
+  courses[courseIndex].name = user.name; // Assuming that you expect a "name" field in the request body
+  courses[courseIndex].page = user.page; // Assuming that you expect a "page" field in the request body
+
+  res.status(200).json({ data: courses[courseIndex], code: 200, message: "OK" });
+};
+
+
+
 export default {
   getCourse,
   getCourseById,
   postCourse,
+  putCourse,
 }
